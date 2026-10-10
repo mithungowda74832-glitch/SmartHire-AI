@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# SmartHire AI — AI Resume Analyzer
 
-# Run and deploy your AI Studio app
+SmartHire AI helps users understand and improve their resumes through AI-powered analysis.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/b540eaf1-f13e-4812-ae11-67adb2758034
+* Upload resumes in PDF, DOCX, or TXT format where supported.
+* Extract skills, experience, education, and project details.
+* Review resume strengths and areas for improvement.
+* Optionally analyze a resume against a target job description.
+* View and export analysis results where supported.
+* Responsive interface with Progressive Web App (PWA) support.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisite:** Node.js
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+
+   ```bash
+   npm install
+   ```
+
+2. Configure your Gemini API key in your local environment file, following the project's existing configuration.
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+## Security
+
+* Never commit API keys, passwords, or other secrets.
+* Keep private configuration in local environment files.
+* Resume data should be handled securely and isolated between users.
