@@ -1,0 +1,10 @@
+/* Component-specific helper classes adhering to zero-pill and spatial guidelines */
+@layer components {
+  .subtle-hairline {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .dark .subtle-hairline {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}

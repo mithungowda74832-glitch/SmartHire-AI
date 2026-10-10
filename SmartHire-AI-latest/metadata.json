@@ -1,0 +1,9 @@
+{
+  "name": "SmartHire AI — Resume Analyzer",
+  "description": "SmartHire AI is a production-ready resume analyzer that extracts skills, identifies strengths and improvements, and benchmarks resumes against target job descriptions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
+

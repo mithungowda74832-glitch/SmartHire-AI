@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartHire AI — Resume Analyzer</title>
+    <meta name="description" content="SmartHire AI is a production-ready resume analyzer that extracts skills, identifies strengths and improvements, and benchmarks resumes against target job descriptions." />
+    <meta name="theme-color" content="#090d16" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="SmartHire" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png" />
+    <meta property="og:title" content="SmartHire AI — Resume Analyzer" />
+    <meta property="og:description" content="SmartHire AI is a production-ready resume analyzer that extracts skills, identifies strengths and improvements, and benchmarks resumes against target job descriptions." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        // Enforce manual scroll restoration so browsers do not auto-scroll down on reload
+        try {
+          if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+          }
+          // On root visits without a section anchor, ensure viewport starts at the top
+          var initialHash = window.location.hash;
+          if (!initialHash || initialHash === '#' || initialHash === '#top') {
+            window.scrollTo(0, 0);
+            window.addEventListener('DOMContentLoaded', function() {
+              window.scrollTo(0, 0);
+            });
+            window.addEventListener('pageshow', function() {
+              window.scrollTo(0, 0);
+            });
+          }
+        } catch(e) {}
+
+        try {
+          var saved = localStorage.getItem('smarthire_theme');
+          var theme = saved;
+          if (!theme || (theme !== 'light' && theme !== 'dark')) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+              theme = 'light';
+            } else {
+              theme = 'dark';
+            }
+          }
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.setAttribute('data-color-scheme', theme);
+          if (theme === 'dark') {
+            root.classList.add('dark');
+            root.classList.remove('light');
+          } else {
+            root.classList.remove('dark');
+            root.classList.add('light');
+          }
+        } catch(e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#f8fafc] text-slate-900 dark:bg-[#070b14] dark:text-slate-100 antialiased selection:bg-cyan-500/20 selection:text-cyan-700 dark:selection:text-cyan-300 min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
